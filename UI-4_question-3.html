@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML5 Video Player</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .player {
+      background: #222;
+      width: 600px;
+      margin: auto;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    video {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 8px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      background: #444;
+      color: white;
+    }
+
+    button:hover {
+      background: #666;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>🎥 Custom Video Player</h1>
+
+  <div class="player">
+    <video id="video">
+      <source src="Saiyaara (1980) Ft. Kishore Kumar full song (Old version) Old is Gold with a New Voice!.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+
+    <div>
+      <button onclick="playVideo()">▶ Play</button>
+      <button onclick="pauseVideo()">⏸ Pause</button>
+      <button onclick="stopVideo()">⏹ Stop</button>
+      <button onclick="makeFullscreen()">⛶ Fullscreen</button>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById("video");
+
+    function playVideo() {
+      video.play();
+    }
+
+    function pauseVideo() {
+      video.pause();
+    }
+
+    function stopVideo() {
+      video.pause();
+      video.currentTime = 0;
+    }
+
+    function makeFullscreen() {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      }
+    }
+  </script>
+
+</body>
+</html>
